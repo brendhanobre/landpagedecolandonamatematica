@@ -336,7 +336,7 @@ h5 {
 .problem-cta {
   display: flex;
   justify-content: center;
-  margin-top: -150px;
+  margin-top: -110px;
 }
 
 .signal-grid,
@@ -994,7 +994,7 @@ h5 {
     left: calc(-1 * var(--aviao-size) - 80px);
     z-index: 4;
     offset-position: auto;
-    offset-path: path("M 0 0 C 140 -150 260 -240 500 -240");
+    offset-path: path("M 0 0 C 150 -150 290 -240 560 -240");
     offset-anchor: center;
     offset-distance: 0%;
     animation: decolar 4.8s cubic-bezier(0.22, 0.8, 0.25, 1) forwards;
