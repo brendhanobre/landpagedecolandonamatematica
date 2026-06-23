@@ -805,6 +805,7 @@ h5 {
   }
 
   h1 {
+    max-width: calc(100% - 112px);
     margin-bottom: 12px;
     font-size: clamp(1.86rem, 10.4vw, 2.55rem);
     line-height: 1.03;
@@ -981,9 +982,9 @@ h5 {
 
 @media (max-width: 620px) {
   .aviao {
-    --aviao-size: clamp(132px, 42vw, 172px);
+    --aviao-size: clamp(118px, 38vw, 172px);
     bottom: 34px;
-    z-index: 2;
+    z-index: 4;
     animation-duration: 3.35s;
   }
 
@@ -997,19 +998,19 @@ h5 {
     }
 
     56% {
-      transform: translate(38vw, -18px) rotate(-4deg);
+      transform: translate(36vw, -120px) rotate(-5deg);
     }
 
     70% {
-      transform: translate(54vw, -56px) rotate(-9deg);
+      transform: translate(52vw, -260px) rotate(-10deg);
     }
 
     84% {
-      transform: translate(68vw, -108px) rotate(-14deg);
+      transform: translate(62vw, -410px) rotate(-15deg);
     }
 
     100% {
-      transform: translate(calc(100vw - var(--aviao-size) - 16px), -166px) rotate(-18deg);
+      transform: translate(calc(100vw - var(--aviao-size) - 14px), -520px) rotate(-18deg);
     }
   }
 }
@@ -1022,6 +1023,40 @@ h5 {
   .hero-content {
     padding-top: 88px;
     padding-bottom: 250px;
+  }
+
+  h1 {
+    max-width: calc(100% - 88px);
+  }
+
+  .aviao {
+    --aviao-size: clamp(108px, 36vw, 134px);
+  }
+
+  @keyframes decolar {
+    0% {
+      transform: translate(-150px, 2px) rotate(0deg);
+    }
+
+    42% {
+      transform: translate(18vw, 0) rotate(0deg);
+    }
+
+    56% {
+      transform: translate(32vw, -130px) rotate(-5deg);
+    }
+
+    70% {
+      transform: translate(48vw, -290px) rotate(-10deg);
+    }
+
+    84% {
+      transform: translate(58vw, -440px) rotate(-15deg);
+    }
+
+    100% {
+      transform: translate(calc(100vw - var(--aviao-size) - 10px), -548px) rotate(-18deg);
+    }
   }
 }
 
