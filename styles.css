@@ -126,6 +126,10 @@ a {
   border: 1px solid var(--line);
 }
 
+.section-cta {
+  margin-top: 22px;
+}
+
 .header-cta:hover,
 .button:hover {
   transform: translateY(-2px);
@@ -327,6 +331,12 @@ h5 {
   width: min(100%, 620px);
   height: auto;
   margin: clamp(-52px, -5vw, -20px) auto 0;
+}
+
+.problem-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: -150px;
 }
 
 .signal-grid,
@@ -890,6 +900,10 @@ h5 {
     width: 100%;
   }
 
+  .section-cta {
+    width: 100%;
+  }
+
   .price-box,
   .signal-grid article,
   .benefits div,
@@ -952,12 +966,13 @@ h5 {
 .aviao {
   position: absolute;
   --aviao-size: clamp(154px, 19.6vw, 252px);
+  --aviao-final-left: min(calc(50% + 260px), calc(100% - var(--aviao-size) - 24px));
   width: var(--aviao-size);
-  left: 0;
-  bottom: 0;
+  left: var(--aviao-final-left);
+  bottom: 300px;
   z-index: 10;
-  offset-position: left bottom;
-  offset-path: path("M -220 -80 L 740 -300 L 920 -300");
+  offset-position: auto;
+  offset-path: path("M -1220 220 L -260 0 L 0 0");
   offset-rotate: auto;
   offset-distance: 0%;
   will-change: offset-distance;
