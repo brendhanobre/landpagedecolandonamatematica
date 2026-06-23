@@ -737,11 +737,12 @@ h5 {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 720px;
+    align-items: start;
   }
 
   .hero-content {
-    padding: 74px 0 58px;
+    padding: 96px 0 210px;
   }
 
   .signal-grid,
@@ -799,11 +800,29 @@ h5 {
 
   .hero-content {
     width: min(100% - 28px, 1080px);
-    padding-top: 74px;
+    padding-top: 92px;
+    padding-bottom: 230px;
   }
 
   h1 {
-    font-size: clamp(2rem, 12vw, 2.65rem);
+    margin-bottom: 12px;
+    font-size: clamp(1.86rem, 10.4vw, 2.55rem);
+    line-height: 1.03;
+  }
+
+  .hero h4 {
+    margin-bottom: 14px;
+    font-size: clamp(1.42rem, 7.8vw, 2rem);
+  }
+
+  .hero-text {
+    font-size: 0.98rem;
+    line-height: 1.52;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 24px;
   }
 
   h2 {
@@ -962,42 +981,47 @@ h5 {
 
 @media (max-width: 620px) {
   .aviao {
-    bottom: 0;
-    animation-duration: 3.2s;
+    --aviao-size: clamp(132px, 42vw, 172px);
+    bottom: 34px;
+    z-index: 2;
+    animation-duration: 3.35s;
   }
 
   @keyframes decolar {
     0% {
-      transform: translate(-180px, -48px) rotate(0deg);
+      transform: translate(-165px, 2px) rotate(0deg);
     }
 
-    50% {
-      transform: translate(48vw, -48px) rotate(0deg);
+    42% {
+      transform: translate(22vw, 0) rotate(0deg);
     }
 
-    60% {
-      transform: translate(58vw, -52px) rotate(-1deg);
+    56% {
+      transform: translate(38vw, -18px) rotate(-4deg);
     }
 
-    68% {
-      transform: translate(66vw, -64px) rotate(-3deg);
-    }
-
-    76% {
-      transform: translate(74vw, -86px) rotate(-6deg);
+    70% {
+      transform: translate(54vw, -56px) rotate(-9deg);
     }
 
     84% {
-      transform: translate(82vw, -118px) rotate(-9deg);
-    }
-
-    92% {
-      transform: translate(90vw, -150px) rotate(-12deg);
+      transform: translate(68vw, -108px) rotate(-14deg);
     }
 
     100% {
-      transform: translate(calc(100vw - 110px), -180px) rotate(-14deg);
+      transform: translate(calc(100vw - var(--aviao-size) - 16px), -166px) rotate(-18deg);
     }
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    min-height: 760px;
+  }
+
+  .hero-content {
+    padding-top: 88px;
+    padding-bottom: 250px;
   }
 }
 
