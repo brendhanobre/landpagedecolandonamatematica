@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Cabecalho fixo: aparece depois que o usuario sai da primeira dobra. -->
     <header class="site-header">
       <a class="brand" href="#topo" aria-label="Decolando na Matematica">
         <img src="imagens/aviao.png" alt="" class="brand-mark" />
@@ -29,6 +30,7 @@
     </header>
 
     <main id="topo">
+      <!-- Hero: primeira dobra com chamada principal e botoes de conversao. -->
       <section class="hero">
         <div class="hero-bg" aria-hidden="true"></div>
 
@@ -49,6 +51,7 @@
         </div>
       </section>
 
+      <!-- Problema: contextualiza a dor dos pais antes de apresentar a solucao. -->
       <section class="problem section">
         <div class="section-intro">
           <h4 class="eyebrow">Alerta aos pais</h4>
@@ -65,6 +68,7 @@
         <img src="imagens/bagagem.png" alt="Bagagem invisível" class="problem-image" />
       </section>
 
+      <!-- Plano de voo: explica o processo em etapas simples. -->
       <section class="flight-plan section" id="plano">
         <div class="section-intro">
           <h4 class="eyebrow">Do check-in á Decolagem</h4>
@@ -120,6 +124,7 @@
         </div>
       </section>
 
+      <!-- Metodo: resume o formato das aulas e do acompanhamento. -->
       <section class="control-tower section" id="metodo">
         <div class="section-intro">
         </div>
@@ -162,6 +167,7 @@
         </div>
       </section>
 
+      <!-- Historia: cria conexao com a origem do projeto. -->
       <section class="story section">
         <div class="story-content">
           <div class="story-text">
@@ -177,6 +183,7 @@
         </div>
       </section>
 
+      <!-- Objetivo: reforca o destino educacional alem das notas. -->
       <section class="leveling section" id="nivelamento">
         <div class="section-intro">
           <p class="eyebrow">Nosso Objetivo</p>
@@ -189,6 +196,7 @@
         <img src="imagens/rota.png" alt="Rota de nivelamento" class="leveling-route" />
       </section>
 
+      <!-- Oferta: concentra preco, beneficios e chamada para matricula. -->
       <section class="offer section" id="embarque">
         <div>
           <p class="eyebrow">Cartao de embarque</p>
@@ -239,6 +247,7 @@
         </div>
       </section>
 
+      <!-- FAQ: remove objecoes comuns antes do contato final. -->
       <section class="faq section">
         <div class="section-intro">
           <p class="eyebrow">Antes do embarque</p>
@@ -366,11 +375,13 @@
       const header = document.querySelector(".site-header");
       const hero = document.querySelector(".hero");
 
+      // Mostra o cabecalho fixo somente quando a secao hero sai da tela.
       function toggleHeader() {
         const heroIsVisible = hero.getBoundingClientRect().bottom > 0;
         header.classList.toggle("is-visible", !heroIsVisible);
       }
 
+      // Garante o estado correto ao carregar, rolar ou redimensionar a pagina.
       toggleHeader();
       window.addEventListener("scroll", toggleHeader, { passive: true });
       window.addEventListener("resize", toggleHeader);

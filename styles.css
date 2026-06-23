@@ -1,3 +1,4 @@
+/* Variaveis globais de cor, fundo e sombra usadas em toda a pagina. */
 :root {
   --navy: #10243e;
   --blue: #075ad6;
@@ -13,6 +14,7 @@
   --shadow: 0 24px 70px rgba(16, 36, 62, 0.14);
 }
 
+/* Reset basico para deixar tamanhos e espacamentos mais previsiveis. */
 * {
   box-sizing: border-box;
 }
@@ -34,6 +36,7 @@ a {
   text-decoration: none;
 }
 
+/* Cabecalho: fica oculto no topo e aparece com a classe .is-visible. */
 .site-header {
   position: fixed;
   top: 0;
@@ -92,6 +95,7 @@ a {
 .nav b:hover {
   color: var(--cloud);
 }
+/* Botoes reutilizaveis da pagina. */
 .header-cta,
 .button {
   display: inline-flex;
@@ -127,6 +131,7 @@ a {
   transform: translateY(-2px);
 }
 
+/* Hero: primeira dobra com imagem de ceu, gradiente e aviao animado. */
 .hero {
   position: relative;
   min-height: clamp(560px, 92svh, 700px);
@@ -257,6 +262,7 @@ h5 {
   color: var(--navy);
 }
 
+/* Padrao de largura e respiro das secoes internas. */
 .section {
   width: min(1080px, calc(100% - clamp(28px, 6vw, 72px)));
   margin: 0 auto;
@@ -285,6 +291,7 @@ h5 {
   line-height: 2;
 }
 
+/* Secao de problema: introduz a dor principal antes da oferta. */
 .problem {
   padding-top: clamp(34px, 5vw, 52px);
   padding-bottom: 8px;
@@ -404,6 +411,7 @@ h5 {
   font-weight: 900;
 }
 
+/* Plano de voo: faixa escura com a linha de etapas do curso. */
 .flight-plan {
   width: 100%;
   max-width: none;
@@ -450,6 +458,7 @@ h5 {
   object-fit: contain;
 }
 
+/* Torre de controle: apresenta o metodo e os dados principais das aulas. */
 .control-tower {
   background: var(--cloud);
 }
@@ -483,6 +492,7 @@ h5 {
   border-bottom: 0;
 }
 
+/* Historia: bloco emocional com imagem de fundo e texto centralizado. */
 .story {
   position: relative;
   isolation: isolate;
@@ -555,6 +565,7 @@ h5 {
   margin-top: 14px;
 }
 
+/* Oferta: divide a chamada comercial e o box de checkout. */
 .offer {
   display: grid;
   grid-template-columns: 1fr 420px;
@@ -658,6 +669,7 @@ h5 {
   width: 100%;
 }
 
+/* FAQ: usa details/summary nativos para abrir e fechar respostas. */
 .faq-list {
   display: grid;
   gap: 12px;
@@ -678,6 +690,7 @@ h5 {
   margin: 14px 0 0;
 }
 
+/* Rodape com assinatura do projeto e links de contato. */
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -731,6 +744,7 @@ h5 {
   object-fit: contain;
 }
 
+/* Ajustes para tablets e telas medias. */
 @media (max-width: 900px) {
   .nav {
     display: none;
@@ -773,6 +787,7 @@ h5 {
 
 }
 
+/* Ajustes para celular: layout em uma coluna e botoes mais largos. */
 @media (max-width: 620px) {
   .site-header {
     align-items: center;
@@ -883,6 +898,7 @@ h5 {
   }
 }
 
+/* Faixa intermediaria para evitar cards apertados em notebooks menores. */
 @media (min-width: 901px) and (max-width: 1180px) {
   .timeline {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -898,6 +914,7 @@ h5 {
   }
 }
 
+/* Telas grandes: aumenta levemente a largura maxima de leitura. */
 @media (min-width: 1440px) {
   .section {
     width: min(1120px, calc(100% - 96px));
@@ -910,6 +927,7 @@ h5 {
   }
 }
 
+/* Celulares muito estreitos: reduz marca, CTA e animacao. */
 @media (max-width: 380px) {
   .brand {
     font-size: 0.84rem;
@@ -929,7 +947,7 @@ h5 {
     font-size: 0.72rem;
   }
 }
-/* AVIÃO HERO */
+/* Aviao do hero: animacao principal de decolagem no desktop. */
 
 .aviao {
   position: absolute;
@@ -938,80 +956,33 @@ h5 {
   left: 0;
   bottom: 0;
   z-index: 10;
-  will-change: transform;
+  offset-position: left bottom;
+  offset-path: path("M -220 -80 L 740 -300 L 920 -300");
+  offset-rotate: auto;
+  offset-distance: 0%;
+  will-change: offset-distance;
   animation: decolar 3.2s cubic-bezier(0.22, 0.8, 0.25, 1) forwards;
 }
 
 @keyframes decolar {
-  0% {
-    transform: translate(-220px, -80px) rotate(0deg);
-  }
-
-  50% {
-    transform: translate(clamp(460px, 52vw, 620px), -80px) rotate(0deg);
-  }
-
-  58% {
-    transform: translate(clamp(525px, 58vw, 680px), -84px) rotate(-1deg);
-  }
-
-  66% {
-    transform: translate(clamp(585px, 64vw, 750px), -100px) rotate(-3deg);
-  }
-
-  74% {
-    transform: translate(clamp(645px, 70vw, 820px), -130px) rotate(-6deg);
-  }
-
-  82% {
-    transform: translate(min(calc(100vw - var(--aviao-size) - 120px), max(705px, calc(50vw + 80px))), -175px) rotate(-9deg);
-  }
-
-  90% {
-    transform: translate(min(calc(100vw - var(--aviao-size) - 84px), max(755px, calc(50vw + 170px))), -235px) rotate(-13deg);
-  }
-
-  96% {
-    transform: translate(min(calc(100vw - var(--aviao-size) - 56px), max(785px, calc(50vw + 235px))), -278px) rotate(-15deg);
-  }
-
-  100% {
-    transform: translate(min(calc(100vw - var(--aviao-size) - 36px), max(800px, calc(50vw + 275px))), -300px) rotate(-16deg);
+  to {
+    offset-distance: 100%;
   }
 }
 
 @media (max-width: 620px) {
   .aviao {
     --aviao-size: clamp(118px, 38vw, 172px);
-    bottom: 34px;
+    top: 360px;
+    right: auto;
+    bottom: auto;
+    left: calc(-1 * var(--aviao-size) - 80px);
     z-index: 4;
-    animation-duration: 3.35s;
-  }
-
-  @keyframes decolar {
-    0% {
-      transform: translate(-165px, 2px) rotate(0deg);
-    }
-
-    42% {
-      transform: translate(22vw, 0) rotate(0deg);
-    }
-
-    56% {
-      transform: translate(36vw, -120px) rotate(-5deg);
-    }
-
-    70% {
-      transform: translate(52vw, -260px) rotate(-10deg);
-    }
-
-    84% {
-      transform: translate(62vw, -410px) rotate(-15deg);
-    }
-
-    100% {
-      transform: translate(calc(100vw - var(--aviao-size) - 14px), -520px) rotate(-18deg);
-    }
+    offset-position: auto;
+    offset-path: path("M 0 0 C 140 -150 260 -240 500 -240");
+    offset-anchor: center;
+    offset-distance: 0%;
+    animation: decolar 4.8s cubic-bezier(0.22, 0.8, 0.25, 1) forwards;
   }
 }
 
@@ -1031,32 +1002,9 @@ h5 {
 
   .aviao {
     --aviao-size: clamp(108px, 36vw, 134px);
-  }
-
-  @keyframes decolar {
-    0% {
-      transform: translate(-150px, 2px) rotate(0deg);
-    }
-
-    42% {
-      transform: translate(18vw, 0) rotate(0deg);
-    }
-
-    56% {
-      transform: translate(32vw, -130px) rotate(-5deg);
-    }
-
-    70% {
-      transform: translate(48vw, -290px) rotate(-10deg);
-    }
-
-    84% {
-      transform: translate(58vw, -440px) rotate(-15deg);
-    }
-
-    100% {
-      transform: translate(calc(100vw - var(--aviao-size) - 10px), -548px) rotate(-18deg);
-    }
+    top: 352px;
+    left: calc(-1 * var(--aviao-size) - 70px);
+    offset-path: path("M 0 0 C 130 -145 250 -220 460 -220");
   }
 }
 
